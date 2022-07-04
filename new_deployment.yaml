@@ -33,7 +33,7 @@ spec:
       name: green-deploy
     spec: 
       containers: 
-        - image: gcr.io/$PROJECT_ID/version:latest
+        - image: gcr.io/speedy-aurora-351809/version:latest
           imagePullPolicy: IfNotPresent
           name: green-deploy
           ports: 
