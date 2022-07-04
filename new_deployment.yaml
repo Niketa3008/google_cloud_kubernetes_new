@@ -54,7 +54,7 @@ spec:
 
       - name: kube-container
 
-        image: gcr.io/speedy-aurora-351809/version:latest
+        image: gcr.io/speedy-aurora-351809/version:8ce58eeb8018315c202753bb9da425710988d8c2
 
         ports:
 
