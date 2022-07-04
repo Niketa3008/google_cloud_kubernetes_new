@@ -33,7 +33,7 @@ spec:
       name: green-deploy
     spec: 
       containers: 
-        - image: gcr.io/speedy-aurora-351809/version:77024366302d3cc94653f292b98e5e54e0eb0780
+        - image: gcr.io/$PROJECT_ID/version:$COMMIT_SHA
           imagePullPolicy: IfNotPresent
           name: green-deploy
           ports: 
