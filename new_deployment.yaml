@@ -12,29 +12,50 @@ spec:
   type: LoadBalancer
 
 --- 
+
+
+
+
+
 apiVersion: apps/v1
+
 kind: Deployment
-metadata: 
-  labels: 
-    app: frontend
-    color: green
-  name: green-deploy
-spec: 
-  replicas: 1
-  selector: 
-    matchLabels: 
-      app: frontend
-      color: green
-  template: 
-    metadata: 
-      labels: 
-        app: frontend
-        color: green
-      name: green-deploy
-    spec: 
-      containers: 
-        - image: gcr.io/speedy-aurora-351809/version:b5736f6e030e16e0753715d7048f507a9f062bad
-          imagePullPolicy: IfNotPresent
-          name: green-deploy
-          ports: 
-            - containerPort: 8080
+
+metadata:
+
+  name: kube-deployment
+
+  labels:
+
+    app: backened
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: backened
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: backened
+
+    spec:
+
+      containers:
+
+      - name: kube-container
+
+        image: gcr.io/speedy-aurora-351809/version:latest
+
+        ports:
+
+        - containerPort: 80
+
