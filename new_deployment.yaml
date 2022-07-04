@@ -33,7 +33,7 @@ spec:
       name: green-deploy
     spec: 
       containers: 
-        - image: gcr.io/$PROJECT_ID/version:$COMMIT_SHA
+        - image: gcr.io/$PROJECT_ID/version:latest
           imagePullPolicy: IfNotPresent
           name: green-deploy
           ports: 
