@@ -1,40 +1,37 @@
----
+#service.yaml:
+#---
+#de
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-svc
+  name: kube-service
 spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  type: LoadBalancer
   selector:
     app: frontend
-  ports:
-    - targetPort: 8080
-      port: 80
-  type: LoadBalancer
-
---- 
+    
+    #deployment.yaml:
+#---
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
-  labels: 
-    app: frontend
-   # color: green
-  name: green-deploy
-spec: 
-  replicas: 1
-  selector: 
-    matchLabels: 
+metadata:
+  name: firstkube
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
       app: frontend
-      # color: green
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         app: frontend
-      #  color: green
-      name: green-deploy
-    spec: 
-      containers: 
-        - image: gcr.io/speedy-aurora-351809/version:latest
-          imagePullPolicy: IfNotPresent
-          name: green-deploy
-          ports: 
-            - containerPort: 8080
+    spec:
+      containers:
+      - name: hello-world-app-container
+        image: gcr.io/speedy-aurora-351809/version:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8080
