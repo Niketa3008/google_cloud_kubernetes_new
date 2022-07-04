@@ -15,23 +15,47 @@ spec:
     
     #deployment.yaml:
 #---
+
+
+
 apiVersion: apps/v1
+
 kind: Deployment
+
 metadata:
-  name: firstkube
+
+  name: kube-deployment
+
+  labels:
+
+    app: frontend
+
 spec:
+
   replicas: 3
+
   selector:
+
     matchLabels:
+
       app: frontend
+
   template:
+
     metadata:
+
       labels:
+
         app: frontend
+
     spec:
+
       containers:
-      - name: hello-world-app-container
+
+      - name: kube-container
+
         image: gcr.io/speedy-aurora-351809/version:latest
-        imagePullPolicy: IfNotPresent
+
         ports:
-          - containerPort: 8080
+
+        - containerPort: 80
