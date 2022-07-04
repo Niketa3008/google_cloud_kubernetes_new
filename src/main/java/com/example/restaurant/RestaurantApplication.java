@@ -42,8 +42,8 @@ public class RestaurantApplication {
 		menu4.put("Garlic Breads", 200);
 		
 		HashMap<String, Integer> menu5 = new HashMap<String, Integer>();
-		menu4.put("Burger", 300);
-		menu4.put("Ice cream", 200);
+		menu5.put("Burger", 300);
+		menu5.put("Ice cream", 200);
 			
 		Map<String, HashMap<String, Integer>> restaurant = new HashMap<String, HashMap<String, Integer>>();
 		restaurant.put("MCDonalds", menu1);
