@@ -15,7 +15,7 @@ public class RestaurantApplication {
     
 	@GetMapping("/")
 	public String welcome() {
-		return "Welcome All-Checking kubernetes-this one";
+		return "Hey,I am new to kubernetes";
 	}
 	
 	@GetMapping("/restaurant")
